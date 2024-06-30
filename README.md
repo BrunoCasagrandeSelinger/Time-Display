@@ -23,7 +23,7 @@ No installation is required for this project. Simply open the `index.html` file 
 
 ## Example Screenshot
 
-![Time Display](screenshots/time_display.png)
+![Time Display](time_display.png)
 
 ## Credits
 
