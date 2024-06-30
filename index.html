@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Time Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #current-time {
+            font-size: 3em;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="current-time"></div>
+
+    <script>
+        function updateTime() {
+            // Get current time
+            let currentTime = new Date();
+
+            // Format the time
+            let hours = currentTime.getHours();
+            let minutes = currentTime.getMinutes();
+            let seconds = currentTime.getSeconds();
+
+            // Add leading zeros if needed
+            hours = (hours < 10 ? "0" : "") + hours;
+            minutes = (minutes < 10 ? "0" : "") + minutes;
+            seconds = (seconds < 10 ? "0" : "") + seconds;
+
+            // Display the time
+            let currentTimeString = hours + ":" + minutes + ":" + seconds;
+            document.getElementById("current-time").innerHTML = currentTimeString;
+        }
+
+        // Call updateTime initially to display the time immediately
+        updateTime();
+
+        // Set up interval to update time every second
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
